@@ -14,7 +14,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pPQ-4X-2Hh" customClass="TitleSearchView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="149"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="149" id="SFb-nN-btb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pPQ-4X-2Hh" secondAttribute="trailing" id="OgO-vb-fz5"/>
+                            <constraint firstItem="pPQ-4X-2Hh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eNI-Vm-pca"/>
+                            <constraint firstItem="pPQ-4X-2Hh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uzP-hl-gEv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

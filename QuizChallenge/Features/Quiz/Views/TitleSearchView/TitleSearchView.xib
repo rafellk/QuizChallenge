@@ -7,20 +7,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitleSearchView" customModule="QuizChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="gZW-gO-cor" id="Vo8-j4-7Pb"/>
+                <outlet property="titleLabel" destination="dRd-SC-Bob" id="ogG-EA-pnA"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="Hv1-9p-4ND" customClass="TitleSearchView" customModule="QuizChallenge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="465" height="313"/>
+        <view contentMode="scaleToFill" id="Hv1-9p-4ND">
+            <rect key="frame" x="0.0" y="0.0" width="327" height="149"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRd-SC-Bob">
-                    <rect key="frame" x="0.0" y="0.0" width="465" height="279"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are all Java keywords?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRd-SC-Bob">
+                    <rect key="frame" x="0.0" y="0.0" width="327" height="91"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZW-gO-cor" customClass="QuizTextField" customModule="QuizChallenge" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="279" width="465" height="34"/>
+                    <rect key="frame" x="0.0" y="115" width="327" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="kLN-B4-KXN"/>
                     </constraints>
@@ -31,7 +36,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="gZW-gO-cor" secondAttribute="bottom" id="1bi-ek-vLD"/>
-                <constraint firstItem="gZW-gO-cor" firstAttribute="top" secondItem="dRd-SC-Bob" secondAttribute="bottom" id="83S-fM-ydH"/>
+                <constraint firstItem="gZW-gO-cor" firstAttribute="top" secondItem="dRd-SC-Bob" secondAttribute="bottom" constant="24" id="83S-fM-ydH"/>
                 <constraint firstItem="dRd-SC-Bob" firstAttribute="leading" secondItem="oHB-0S-SbC" secondAttribute="leading" id="NrW-Xf-kMl"/>
                 <constraint firstAttribute="top" secondItem="dRd-SC-Bob" secondAttribute="top" id="Sre-C5-tct"/>
                 <constraint firstItem="oHB-0S-SbC" firstAttribute="trailing" secondItem="dRd-SC-Bob" secondAttribute="trailing" id="eYQ-4X-UGz"/>
@@ -40,11 +45,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="oHB-0S-SbC"/>
-            <connections>
-                <outlet property="textField" destination="gZW-gO-cor" id="RA3-hc-SV4"/>
-                <outlet property="titleLabel" destination="dRd-SC-Bob" id="zRz-gq-4rp"/>
-            </connections>
-            <point key="canvasLocation" x="-44.20289855072464" y="127.56696428571428"/>
+            <point key="canvasLocation" x="-142.75362318840581" y="59.263392857142854"/>
         </view>
     </objects>
 </document>

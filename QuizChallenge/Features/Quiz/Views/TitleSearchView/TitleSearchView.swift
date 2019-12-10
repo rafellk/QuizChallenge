@@ -14,6 +14,24 @@ class TitleSearchView: UIView {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var textField: QuizTextField!
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        if let newView = Bundle.main.loadNibNamed("TitleSearchView", owner: self, options: nil)?.first as? UIView {
+            addSubview(newView)
+            newView.frame = bounds
+            newView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        }
+    }
+    
     // IBOutlet variables
     weak var delegate: UITextFieldDelegate? {
         didSet {
