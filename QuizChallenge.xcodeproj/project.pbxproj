@@ -24,6 +24,8 @@
 		436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9858239F36BE00243324 /* CurrentStatusView.swift */; };
 		436A985C239F41A100243324 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A985B239F41A100243324 /* UIColor+Extension.swift */; };
 		436A985E239F519100243324 /* KeywordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A985D239F519100243324 /* KeywordsTableViewCell.swift */; };
+		436A9861239F5EF200243324 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9860239F5EF200243324 /* QuizViewModel.swift */; };
+		436A9864239F5F3800243324 /* QuizNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9863239F5F3800243324 /* QuizNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		436A9858239F36BE00243324 /* CurrentStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusView.swift; sourceTree = "<group>"; };
 		436A985B239F41A100243324 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		436A985D239F519100243324 /* KeywordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsTableViewCell.swift; sourceTree = "<group>"; };
+		436A9860239F5EF200243324 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		436A9863239F5F3800243324 /* QuizNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				436A985A239F419600243324 /* Extensions */,
+				436A9862239F5F1D00243324 /* Common */,
 				431E2CB9239F189200D9235C /* Features */,
 				4301078B239F16B200A37404 /* AppDelegate.swift */,
 				4301078D239F16B200A37404 /* SceneDelegate.swift */,
@@ -157,6 +162,7 @@
 		431E2CBA239F18BB00D9235C /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				436A985F239F5EDE00243324 /* ViewModels */,
 				431E2CBB239F18D200D9235C /* Views */,
 			);
 			path = Quiz;
@@ -217,6 +223,22 @@
 				436A985B239F41A100243324 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		436A985F239F5EDE00243324 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				436A9860239F5EF200243324 /* QuizViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		436A9862239F5F1D00243324 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				436A9863239F5F3800243324 /* QuizNotifications.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,8 +380,10 @@
 				436A985C239F41A100243324 /* UIColor+Extension.swift in Sources */,
 				436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */,
 				436A985E239F519100243324 /* KeywordsTableViewCell.swift in Sources */,
+				436A9861239F5EF200243324 /* QuizViewModel.swift in Sources */,
 				436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */,
 				436A9857239F34CE00243324 /* CurvedButton.swift in Sources */,
+				436A9864239F5F3800243324 /* QuizNotifications.swift in Sources */,
 				4301078C239F16B200A37404 /* AppDelegate.swift in Sources */,
 				4301078E239F16B200A37404 /* SceneDelegate.swift in Sources */,
 			);

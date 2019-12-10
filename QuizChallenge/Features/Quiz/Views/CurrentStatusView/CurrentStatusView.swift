@@ -36,11 +36,18 @@ class CurrentStatusView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureStyle()
+        registerNotifications()
     }
     
     private func configureStyle() {
         // todo: localize this string
         resetButton.setTitle("Reset", for: .normal)
+        clear()
+    }
+    
+    private func clear() {
+        scoreLabel.text = "00/00"
+        timeLabel.text = "00:00"
     }
 }
 
@@ -48,5 +55,23 @@ extension CurrentStatusView {
     
     func configure() {
         // todo: register time notifications here
+    }
+}
+
+extension CurrentStatusView {
+    
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(elapsedTimeChanged(notification:)),
+                                               name: elapsedTimeNotification,
+                                               object: nil)
+
+    }
+    
+    @objc
+    private func elapsedTimeChanged(notification: Notification) {
+        if let time = notification.object as? String {
+            timeLabel.text = time
+        }
     }
 }

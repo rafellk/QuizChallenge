@@ -24,6 +24,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var statusViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var backgroundBottomConstraint: NSLayoutConstraint!
     
+    // View Model
+    private var viewModel: QuizViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -40,6 +43,7 @@ class MainViewController: UIViewController {
                             andPlaceholder: "Insert Word",
                             delegate: self)
         hideKeyboardWhenTappedAround()
+        viewModel = QuizViewModel()
     }
 }
 
