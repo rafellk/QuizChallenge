@@ -13,6 +13,11 @@ class KeywordsTableView: UITableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureDelegates()
+        configureTableViewCell()
+    }
+    
+    private func configureTableViewCell() {
+        register(KeywordsTableViewCell.self, forCellReuseIdentifier: "keywordsTableViewCellID")
     }
     
     private func configureDelegates() {
@@ -22,10 +27,16 @@ class KeywordsTableView: UITableView {
 
 extension KeywordsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = dequeueReusableCell(withIdentifier: "keywordsTableViewCellID") else {
+            return UITableViewCell()
+        }
+        
+        cell.textLabel?.text = "java"
+        
+        return cell
     }
 }
