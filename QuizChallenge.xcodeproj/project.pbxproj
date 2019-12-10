@@ -18,6 +18,7 @@
 		436A984D239F2E1C00243324 /* TitleSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A984C239F2E1C00243324 /* TitleSearchView.xib */; };
 		436A984F239F2F5200243324 /* QuizTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A984E239F2F5200243324 /* QuizTextField.swift */; };
 		436A9851239F300C00243324 /* TitleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9850239F300C00243324 /* TitleSearchView.swift */; };
+		436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9852239F32F600243324 /* KeywordsTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		436A984C239F2E1C00243324 /* TitleSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSearchView.xib; sourceTree = "<group>"; };
 		436A984E239F2F5200243324 /* QuizTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTextField.swift; sourceTree = "<group>"; };
 		436A9850239F300C00243324 /* TitleSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearchView.swift; sourceTree = "<group>"; };
+		436A9852239F32F600243324 /* KeywordsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		431E2CBE239F190000D9235C /* KeywordsTableView */ = {
 			isa = PBXGroup;
 			children = (
+				436A9852239F32F600243324 /* KeywordsTableView.swift */,
 			);
 			path = KeywordsTableView;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				436A984F239F2F5200243324 /* QuizTextField.swift in Sources */,
 				43010790239F16B200A37404 /* MainViewController.swift in Sources */,
 				436A9851239F300C00243324 /* TitleSearchView.swift in Sources */,
+				436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */,
 				4301078C239F16B200A37404 /* AppDelegate.swift in Sources */,
 				4301078E239F16B200A37404 /* SceneDelegate.swift in Sources */,
 			);
