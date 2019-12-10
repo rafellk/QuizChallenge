@@ -19,6 +19,9 @@
 		436A984F239F2F5200243324 /* QuizTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A984E239F2F5200243324 /* QuizTextField.swift */; };
 		436A9851239F300C00243324 /* TitleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9850239F300C00243324 /* TitleSearchView.swift */; };
 		436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9852239F32F600243324 /* KeywordsTableView.swift */; };
+		436A9855239F33E700243324 /* CurrentStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A9854239F33E700243324 /* CurrentStatusView.xib */; };
+		436A9857239F34CE00243324 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9856239F34CE00243324 /* CurvedButton.swift */; };
+		436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9858239F36BE00243324 /* CurrentStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		436A984E239F2F5200243324 /* QuizTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTextField.swift; sourceTree = "<group>"; };
 		436A9850239F300C00243324 /* TitleSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearchView.swift; sourceTree = "<group>"; };
 		436A9852239F32F600243324 /* KeywordsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsTableView.swift; sourceTree = "<group>"; };
+		436A9854239F33E700243324 /* CurrentStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentStatusView.xib; sourceTree = "<group>"; };
+		436A9856239F34CE00243324 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
+		436A9858239F36BE00243324 /* CurrentStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,9 @@
 		431E2CBF239F190D00D9235C /* CurrentStatusView */ = {
 			isa = PBXGroup;
 			children = (
+				436A9854239F33E700243324 /* CurrentStatusView.xib */,
+				436A9856239F34CE00243324 /* CurvedButton.swift */,
+				436A9858239F36BE00243324 /* CurrentStatusView.swift */,
 			);
 			path = CurrentStatusView;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 			files = (
 				43010798239F16B400A37404 /* LaunchScreen.storyboard in Resources */,
 				43010795239F16B400A37404 /* Assets.xcassets in Resources */,
+				436A9855239F33E700243324 /* CurrentStatusView.xib in Resources */,
 				43010793239F16B200A37404 /* Main.storyboard in Resources */,
 				436A984D239F2E1C00243324 /* TitleSearchView.xib in Resources */,
 			);
@@ -332,6 +342,8 @@
 				43010790239F16B200A37404 /* MainViewController.swift in Sources */,
 				436A9851239F300C00243324 /* TitleSearchView.swift in Sources */,
 				436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */,
+				436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */,
+				436A9857239F34CE00243324 /* CurvedButton.swift in Sources */,
 				4301078C239F16B200A37404 /* AppDelegate.swift in Sources */,
 				4301078E239F16B200A37404 /* SceneDelegate.swift in Sources */,
 			);

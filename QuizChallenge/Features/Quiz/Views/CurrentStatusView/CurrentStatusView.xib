@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zRq-ya-MrX" customClass="CurrentStatusView" customModule="QuizChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="253" height="76"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qr-2v-BZf" customClass="CurvedButton" customModule="QuizChallenge" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="42" width="253" height="34"/>
+                    <color key="backgroundColor" red="1" green="0.51372549019607838" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="jER-9V-csd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="Reset"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wK6-Oa-YEb">
+                    <rect key="frame" x="0.0" y="0.0" width="49" height="26"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-kU-puF">
+                    <rect key="frame" x="203" y="0.0" width="50" height="26"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="wK6-Oa-YEb" firstAttribute="leading" secondItem="WxE-zY-goB" secondAttribute="leading" id="10c-3M-YBv"/>
+                <constraint firstItem="8qr-2v-BZf" firstAttribute="leading" secondItem="WxE-zY-goB" secondAttribute="leading" id="2eA-C7-VwP"/>
+                <constraint firstItem="d4f-kU-puF" firstAttribute="height" secondItem="wK6-Oa-YEb" secondAttribute="height" id="Fgs-Hu-wg1"/>
+                <constraint firstItem="8qr-2v-BZf" firstAttribute="bottom" secondItem="zRq-ya-MrX" secondAttribute="bottom" id="Te2-sj-MCK"/>
+                <constraint firstItem="8qr-2v-BZf" firstAttribute="top" secondItem="wK6-Oa-YEb" secondAttribute="bottom" constant="16" id="gWC-7W-gPC"/>
+                <constraint firstItem="WxE-zY-goB" firstAttribute="trailing" secondItem="8qr-2v-BZf" secondAttribute="trailing" id="i4O-Bn-Xz9"/>
+                <constraint firstItem="d4f-kU-puF" firstAttribute="top" secondItem="wK6-Oa-YEb" secondAttribute="top" id="t7M-X7-acU"/>
+                <constraint firstAttribute="top" secondItem="wK6-Oa-YEb" secondAttribute="top" id="udh-s0-ML6"/>
+                <constraint firstItem="WxE-zY-goB" firstAttribute="trailing" secondItem="d4f-kU-puF" secondAttribute="trailing" id="vmm-MT-H6n"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="WxE-zY-goB"/>
+            <connections>
+                <outlet property="resetButton" destination="8qr-2v-BZf" id="xvj-Gq-SjO"/>
+                <outlet property="scoreLabel" destination="wK6-Oa-YEb" id="vZ9-kb-LY3"/>
+                <outlet property="timeLabel" destination="d4f-kU-puF" id="pGe-ua-asu"/>
+            </connections>
+            <point key="canvasLocation" x="-170.28985507246378" y="81.026785714285708"/>
+        </view>
+    </objects>
+</document>
