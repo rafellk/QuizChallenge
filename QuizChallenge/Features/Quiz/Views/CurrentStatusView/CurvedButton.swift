@@ -16,6 +16,6 @@ class CurvedButton: UIButton {
     }
     
     private func configureStyle() {
-        // todo: configureStyle here
+        layer.cornerRadius = 8
     }
 }

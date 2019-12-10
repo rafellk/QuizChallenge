@@ -13,7 +13,25 @@ class CurrentStatusView: UIView {
     // IBOutlet variables
     @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
-    @IBOutlet weak var resetButton: CurvedButton!
+    @IBOutlet private weak var resetButton: CurvedButton!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        if let newView = Bundle.main.loadNibNamed("CurrentStatusView", owner: self, options: nil)?.first as? UIView {
+            addSubview(newView)
+            newView.frame = bounds
+            newView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

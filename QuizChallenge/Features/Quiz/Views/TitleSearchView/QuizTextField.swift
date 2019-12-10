@@ -23,4 +23,16 @@ class QuizTextField: UITextField {
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configureStyle()
+    }
+}
+
+extension QuizTextField {
+    
+    private func configureStyle() {
+        layer.cornerRadius = 8
+    }
 }

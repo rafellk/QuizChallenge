@@ -22,22 +22,42 @@
                                     <constraint firstAttribute="height" constant="167" id="SFb-nN-btb"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xca-HW-Dhd">
+                                <rect key="frame" x="0.0" y="769" width="414" height="127"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-zw-oNI" customClass="CurrentStatusView" customModule="QuizChallenge" customModuleProvider="target">
+                                <rect key="frame" x="16" y="785" width="382" height="95"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="wYx-4h-0dd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xca-HW-Dhd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BeU-mv-rja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ffA-zw-oNI" secondAttribute="trailing" constant="16" id="FBx-j7-ivm"/>
+                            <constraint firstAttribute="bottom" secondItem="ffA-zw-oNI" secondAttribute="bottom" constant="16" id="IaW-9w-Eiy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pPQ-4X-2Hh" secondAttribute="trailing" constant="16" id="OgO-vb-fz5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xca-HW-Dhd" secondAttribute="trailing" id="UWw-Aq-8Ht"/>
+                            <constraint firstItem="xca-HW-Dhd" firstAttribute="top" secondItem="ffA-zw-oNI" secondAttribute="top" constant="-16" id="ZRP-yd-Ot2"/>
+                            <constraint firstAttribute="bottom" secondItem="xca-HW-Dhd" secondAttribute="bottom" id="amp-K5-XDZ"/>
                             <constraint firstItem="pPQ-4X-2Hh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eNI-Vm-pca"/>
                             <constraint firstItem="pPQ-4X-2Hh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uzP-hl-gEv"/>
+                            <constraint firstItem="ffA-zw-oNI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yow-4Y-iDk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="currentStatusBackgroundView" destination="xca-HW-Dhd" id="cNl-Pc-XXT"/>
+                        <outlet property="statusView" destination="ffA-zw-oNI" id="AfG-Iq-Yaq"/>
                         <outlet property="titleView" destination="pPQ-4X-2Hh" id="Hly-mx-2i1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="139"/>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

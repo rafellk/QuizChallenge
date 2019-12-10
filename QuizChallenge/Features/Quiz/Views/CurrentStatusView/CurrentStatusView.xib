@@ -7,30 +7,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentStatusView" customModule="QuizChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="resetButton" destination="8qr-2v-BZf" id="1cf-E8-y9t"/>
+                <outlet property="scoreLabel" destination="wK6-Oa-YEb" id="gWl-bF-p2n"/>
+                <outlet property="timeLabel" destination="d4f-kU-puF" id="tbS-Nr-iqQ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="zRq-ya-MrX" customClass="CurrentStatusView" customModule="QuizChallenge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="253" height="76"/>
+        <view contentMode="scaleToFill" id="zRq-ya-MrX">
+            <rect key="frame" x="0.0" y="0.0" width="253" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qr-2v-BZf" customClass="CurvedButton" customModule="QuizChallenge" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="42" width="253" height="34"/>
+                    <rect key="frame" x="0.0" y="42" width="253" height="50"/>
                     <color key="backgroundColor" red="1" green="0.51372549019607838" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="jER-9V-csd"/>
+                        <constraint firstAttribute="height" constant="50" id="jER-9V-csd"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <state key="normal" title="Reset"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wK6-Oa-YEb">
-                    <rect key="frame" x="0.0" y="0.0" width="49" height="26"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="26"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-kU-puF">
-                    <rect key="frame" x="203" y="0.0" width="50" height="26"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <rect key="frame" x="155" y="0.0" width="98" height="26"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -49,12 +55,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="WxE-zY-goB"/>
-            <connections>
-                <outlet property="resetButton" destination="8qr-2v-BZf" id="xvj-Gq-SjO"/>
-                <outlet property="scoreLabel" destination="wK6-Oa-YEb" id="vZ9-kb-LY3"/>
-                <outlet property="timeLabel" destination="d4f-kU-puF" id="pGe-ua-asu"/>
-            </connections>
-            <point key="canvasLocation" x="-170.28985507246378" y="81.026785714285708"/>
+            <point key="canvasLocation" x="-170.28985507246378" y="75.669642857142847"/>
         </view>
     </objects>
 </document>
