@@ -13,14 +13,16 @@ class MainViewController: UIViewController {
     // IBOutlet variables
     @IBOutlet weak var titleView: TitleSearchView!
     @IBOutlet weak var currentStatusBackgroundView: UIView!
+    
     @IBOutlet weak var statusView: CurrentStatusView!
-    @IBOutlet weak var statusViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var backgroundBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: KeywordsTableView!
     
     // Keyboard animation variables
     private var initialStatusViewY: CGFloat?
     private var initialStatusViewBackgroundY: CGFloat?
+    
+    @IBOutlet weak var statusViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backgroundBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,8 @@ class MainViewController: UIViewController {
     private func configure() {
         // todo: localize this and get this from the view model instead
         titleView.configure(withTitle: "What are all Java keywords?",
-                            andPlaceholder: "Insert Word")
+                            andPlaceholder: "Insert Word",
+                            delegate: self)
         hideKeyboardWhenTappedAround()
     }
 }
@@ -58,17 +61,13 @@ extension MainViewController {
 
     @objc
     func keyboardWillShow(notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-            let initialStatusViewY = initialStatusViewY {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            view.layoutIfNeeded()
 
-            if statusViewBottomConstraint.constant == initialStatusViewY {
-                view.layoutIfNeeded()
+            statusViewBottomConstraint.constant += keyboardSize.height
+            backgroundBottomConstraint.constant += keyboardSize.height
 
-                statusViewBottomConstraint.constant += keyboardSize.height
-                backgroundBottomConstraint.constant += keyboardSize.height
-
-                view.layoutIfNeeded()
-            }
+            view.layoutIfNeeded()
         }
     }
     
@@ -104,5 +103,19 @@ extension MainViewController {
     @objc
     private func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // todo: call view model here to validate
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textField.text = ""
+        view.endEditing(true)
+        return false
     }
 }

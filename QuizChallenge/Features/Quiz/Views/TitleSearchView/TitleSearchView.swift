@@ -14,6 +14,13 @@ class TitleSearchView: UIView {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var textField: QuizTextField!
     
+    // Delegate variable
+    weak var delegate: UITextFieldDelegate? {
+        didSet {
+            textField.delegate = delegate
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -31,24 +38,13 @@ class TitleSearchView: UIView {
             newView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        textField.delegate = self
-    }
 }
 
 extension TitleSearchView {
     
-    func configure(withTitle title: String, andPlaceholder placeholder: String? = nil) {
+    func configure(withTitle title: String, andPlaceholder placeholder: String? = nil, delegate: UITextFieldDelegate? = nil) {
         titleLabel.text = title
         textField.placeholder = placeholder
-    }
-}
-
-extension TitleSearchView: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
+        self.delegate = delegate
     }
 }
