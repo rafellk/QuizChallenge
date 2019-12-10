@@ -22,6 +22,7 @@
 		436A9855239F33E700243324 /* CurrentStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A9854239F33E700243324 /* CurrentStatusView.xib */; };
 		436A9857239F34CE00243324 /* CurvedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9856239F34CE00243324 /* CurvedButton.swift */; };
 		436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9858239F36BE00243324 /* CurrentStatusView.swift */; };
+		436A985C239F41A100243324 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A985B239F41A100243324 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		436A9854239F33E700243324 /* CurrentStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentStatusView.xib; sourceTree = "<group>"; };
 		436A9856239F34CE00243324 /* CurvedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedButton.swift; sourceTree = "<group>"; };
 		436A9858239F36BE00243324 /* CurrentStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStatusView.swift; sourceTree = "<group>"; };
+		436A985B239F41A100243324 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		4301078A239F16B200A37404 /* QuizChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				436A985A239F419600243324 /* Extensions */,
 				431E2CB9239F189200D9235C /* Features */,
 				4301078B239F16B200A37404 /* AppDelegate.swift */,
 				4301078D239F16B200A37404 /* SceneDelegate.swift */,
@@ -203,6 +206,14 @@
 				436A9858239F36BE00243324 /* CurrentStatusView.swift */,
 			);
 			path = CurrentStatusView;
+			sourceTree = "<group>";
+		};
+		436A985A239F419600243324 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				436A985B239F41A100243324 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 				436A984F239F2F5200243324 /* QuizTextField.swift in Sources */,
 				43010790239F16B200A37404 /* MainViewController.swift in Sources */,
 				436A9851239F300C00243324 /* TitleSearchView.swift in Sources */,
+				436A985C239F41A100243324 /* UIColor+Extension.swift in Sources */,
 				436A9853239F32F600243324 /* KeywordsTableView.swift in Sources */,
 				436A9859239F36BE00243324 /* CurrentStatusView.swift in Sources */,
 				436A9857239F34CE00243324 /* CurvedButton.swift in Sources */,

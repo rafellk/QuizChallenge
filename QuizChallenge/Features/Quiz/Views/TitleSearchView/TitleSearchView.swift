@@ -32,19 +32,23 @@ class TitleSearchView: UIView {
         }
     }
     
-    // IBOutlet variables
-    weak var delegate: UITextFieldDelegate? {
-        didSet {
-            textField.delegate = delegate
-        }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textField.delegate = self
     }
 }
 
 extension TitleSearchView {
     
-    private func configure(withTitle title: String,
-                           andDelegate delegate: UITextFieldDelegate) {
+    func configure(withTitle title: String, andPlaceholder placeholder: String? = nil) {
         titleLabel.text = title
-        self.delegate = delegate
+        textField.placeholder = placeholder
+    }
+}
+
+extension TitleSearchView: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
 }
