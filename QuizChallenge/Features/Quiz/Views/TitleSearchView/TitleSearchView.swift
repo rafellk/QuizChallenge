@@ -38,6 +38,11 @@ class TitleSearchView: UIView {
             newView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        registerNotification()
+    }
 }
 
 extension TitleSearchView {
@@ -46,5 +51,29 @@ extension TitleSearchView {
         titleLabel.text = title
         textField.placeholder = placeholder
         self.delegate = delegate
+    }
+}
+
+extension TitleSearchView {
+    
+    private func registerNotification() {
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(newWordFound(notification:)),
+                                               name: newAnswerFoundNotification,
+                                               object: nil)
+    }
+    
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        NotificationCenter.default.post(name: newEntryNotification, object: textField.text)
+    }
+    
+    @objc
+    private func newWordFound(notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            self?.textField.text = ""
+        }
     }
 }

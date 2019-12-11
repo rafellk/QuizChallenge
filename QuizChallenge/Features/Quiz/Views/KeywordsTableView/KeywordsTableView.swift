@@ -10,10 +10,23 @@ import UIKit
 
 class KeywordsTableView: UITableView {
     
+    private var foundWords = [String]() {
+        didSet {
+            if foundWords.count > 0 {
+                DispatchQueue.main.async { [weak self] in
+                    self?.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+                }
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         configureDelegates()
         configureTableViewCell()
+        
+        registerNotifications()
     }
     
     private func configureTableViewCell() {
@@ -27,7 +40,7 @@ class KeywordsTableView: UITableView {
 
 extension KeywordsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return foundWords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,8 +48,36 @@ extension KeywordsTableView: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = "java"
+        cell.textLabel?.text = foundWords[indexPath.row]
         
         return cell
+    }
+}
+
+extension KeywordsTableView {
+    
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(newWordFound(notification:)),
+                                               name: newAnswerFoundNotification,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(resetGame),
+                                               name: resetGameNotification,
+                                               object: nil)
+    }
+    
+    @objc
+    private func newWordFound(notification: Notification) {
+        if let tuple = notification.object as? (String, [String]) {
+            foundWords = tuple.1
+        }
+    }
+
+    @objc
+    private func resetGame() {
+        foundWords.removeAll()
+        reloadData()
     }
 }

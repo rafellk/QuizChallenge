@@ -40,8 +40,8 @@ class CurrentStatusView: UIView {
     }
     
     private func configureStyle() {
-        // todo: localize this string
         resetButton.setTitle("Reset", for: .normal)
+        resetButton.addTarget(self, action: #selector(resetButtonPressed), for: .touchUpInside)
         clear()
     }
     
@@ -53,25 +53,41 @@ class CurrentStatusView: UIView {
 
 extension CurrentStatusView {
     
-    func configure() {
-        // todo: register time notifications here
-    }
-}
-
-extension CurrentStatusView {
-    
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(elapsedTimeChanged(notification:)),
                                                name: elapsedTimeNotification,
                                                object: nil)
-
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(newWordFound(notification:)),
+                                               name: newAnswerFoundNotification,
+                                               object: nil)
     }
     
     @objc
     private func elapsedTimeChanged(notification: Notification) {
         if let time = notification.object as? String {
-            timeLabel.text = time
+            DispatchQueue.main.async { [weak self] in
+                self?.timeLabel.text = time
+            }
         }
+    }
+    
+    @objc
+    private func newWordFound(notification: Notification) {
+        if let score = notification.object as? (String, [String]) {
+            DispatchQueue.main.async { [weak self] in
+                self?.scoreLabel.text = score.0
+            }
+        }
+    }
+}
+
+extension CurrentStatusView {
+    
+    @objc
+    private func resetButtonPressed() {
+        NotificationCenter.default.post(name: resetGameNotification, object: nil)
     }
 }

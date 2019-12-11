@@ -52,7 +52,6 @@ class MainViewController: UIViewController {
         viewModel = QuizViewModel(withPresenter: self)
         
         viewModel?.onIsProcessing = { [weak self] isProcessing in
-            print(isProcessing)
             if isProcessing {
                 if let safeSelf = self {
                     safeSelf.progressView = safeSelf.progressView ??
@@ -81,16 +80,15 @@ extension MainViewController {
     
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(MainViewController.keyboardWillShow(notification:)),
+                                               selector: #selector(keyboardWillShow(notification:)),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
 
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(MainViewController.keyboardWillHide(notification:)),
+                                               selector: #selector(keyboardWillHide(notification:)),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
-    
 
     @objc
     func keyboardWillShow(notification: Notification) {
@@ -140,11 +138,6 @@ extension MainViewController {
 }
 
 extension MainViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // todo: call view model here to validate
-        return true
-    }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         textField.text = ""

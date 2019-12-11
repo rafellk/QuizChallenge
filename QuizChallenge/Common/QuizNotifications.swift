@@ -9,4 +9,6 @@
 import Foundation
 
 let elapsedTimeNotification = NSNotification.Name.init("elapsedTimeNotification")
-//let statusNotification = NSNotification.Name.init("elapsedTimeNotification")
+let newAnswerFoundNotification = NSNotification.Name.init("newAnswerFoundNotification")
+let newEntryNotification = NSNotification.Name.init("newEntryNotification")
+let resetGameNotification = NSNotification.Name.init("resetGameNotification")
