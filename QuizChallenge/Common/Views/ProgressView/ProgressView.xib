@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="F2K-uA-hjK" customClass="ProgressView" customModule="QuizChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1g-TM-gmi">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNU-ee-R8F">
+                    <rect key="frame" x="132" y="378" width="150" height="150"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-0R-EmE">
+                            <rect key="frame" x="56.5" y="46.5" width="37" height="37"/>
+                            <color key="color" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox1-8w-VIY">
+                            <rect key="frame" x="37.5" y="91.5" width="75" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Boa-g4-dWG"/>
+                        <constraint firstAttribute="width" secondItem="YNU-ee-R8F" secondAttribute="height" multiplier="1:1" id="KrO-8n-KfC"/>
+                        <constraint firstItem="Ox1-8w-VIY" firstAttribute="centerX" secondItem="YNU-ee-R8F" secondAttribute="centerX" id="L9z-QA-ImH"/>
+                        <constraint firstItem="kqh-0R-EmE" firstAttribute="centerY" secondItem="YNU-ee-R8F" secondAttribute="centerY" constant="-10" id="iaV-zp-q6a"/>
+                        <constraint firstItem="Ox1-8w-VIY" firstAttribute="top" secondItem="kqh-0R-EmE" secondAttribute="bottom" constant="8" id="kEn-Q1-RVd"/>
+                        <constraint firstItem="kqh-0R-EmE" firstAttribute="centerX" secondItem="YNU-ee-R8F" secondAttribute="centerX" id="wa1-3R-cVh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="m1g-TM-gmi" secondAttribute="bottom" id="1h0-rW-Xgu"/>
+                <constraint firstItem="ubz-0a-AmP" firstAttribute="trailing" secondItem="m1g-TM-gmi" secondAttribute="trailing" id="HVT-oB-5Ig"/>
+                <constraint firstItem="YNU-ee-R8F" firstAttribute="centerY" secondItem="ubz-0a-AmP" secondAttribute="centerY" id="ImI-eA-4TK"/>
+                <constraint firstItem="YNU-ee-R8F" firstAttribute="centerX" secondItem="ubz-0a-AmP" secondAttribute="centerX" id="Ngu-4B-DjL"/>
+                <constraint firstItem="m1g-TM-gmi" firstAttribute="leading" secondItem="ubz-0a-AmP" secondAttribute="leading" id="aVb-Jb-RpK"/>
+                <constraint firstItem="m1g-TM-gmi" firstAttribute="top" secondItem="F2K-uA-hjK" secondAttribute="top" id="iRa-zS-Cws"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ubz-0a-AmP"/>
+            <connections>
+                <outlet property="containerView" destination="YNU-ee-R8F" id="cdq-St-E93"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="127.90178571428571"/>
+        </view>
+    </objects>
+</document>
