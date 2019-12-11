@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var statusView: CurrentStatusView!
     @IBOutlet weak var tableView: KeywordsTableView!
     
+    private var progressView: UIView?
+    
     // Keyboard animation variables
     private var initialStatusViewY: CGFloat?
     private var initialStatusViewBackgroundY: CGFloat?
@@ -43,7 +45,34 @@ class MainViewController: UIViewController {
                             andPlaceholder: "Insert Word",
                             delegate: self)
         hideKeyboardWhenTappedAround()
-        viewModel = QuizViewModel()
+        configureViewModel()
+    }
+    
+    private func configureViewModel() {
+        viewModel = QuizViewModel(withPresenter: self)
+        
+        viewModel?.onIsProcessing = { [weak self] isProcessing in
+            print(isProcessing)
+            if isProcessing {
+                if let safeSelf = self {
+                    safeSelf.progressView = safeSelf.progressView ??
+                        ProgressView.instance(inRect: safeSelf.view.frame)
+                    UIView.animate(withDuration: 1) {
+                        DispatchQueue.main.async {
+                            safeSelf.view.addSubview(safeSelf.progressView!)
+                        }
+                    }
+                }
+            } else {
+                UIView.animate(withDuration: 1) {
+                    DispatchQueue.main.async {
+                        self?.progressView?.removeFromSuperview()
+                    }
+                }
+            }
+        }
+        
+        viewModel?.start()
     }
 }
 
