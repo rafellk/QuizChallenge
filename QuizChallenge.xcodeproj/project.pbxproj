@@ -20,6 +20,9 @@
 		430A807E23A06C1800B4168C /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A807D23A06C1800B4168C /* QuizService.swift */; };
 		430A808123A06C3200B4168C /* QuizResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A808023A06C3200B4168C /* QuizResponse.swift */; };
 		430A808423A06C5700B4168C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A808323A06C5700B4168C /* BaseViewModel.swift */; };
+		430A808923A17A5B00B4168C /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A808823A17A5B00B4168C /* ViewModelTests.swift */; };
+		43579ED823A1806D0078F68A /* MockedQuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43579ED723A1806D0078F68A /* MockedQuizService.swift */; };
+		43579EDD23A1851E0078F68A /* NotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43579EDC23A1851E0078F68A /* NotificationsHelper.swift */; };
 		436A984D239F2E1C00243324 /* TitleSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A984C239F2E1C00243324 /* TitleSearchView.xib */; };
 		436A984F239F2F5200243324 /* QuizTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A984E239F2F5200243324 /* QuizTextField.swift */; };
 		436A9851239F300C00243324 /* TitleSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A9850239F300C00243324 /* TitleSearchView.swift */; };
@@ -71,6 +74,9 @@
 		430A807D23A06C1800B4168C /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		430A808023A06C3200B4168C /* QuizResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResponse.swift; sourceTree = "<group>"; };
 		430A808323A06C5700B4168C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		430A808823A17A5B00B4168C /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		43579ED723A1806D0078F68A /* MockedQuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedQuizService.swift; sourceTree = "<group>"; };
+		43579EDC23A1851E0078F68A /* NotificationsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsHelper.swift; sourceTree = "<group>"; };
 		436A984C239F2E1C00243324 /* TitleSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleSearchView.xib; sourceTree = "<group>"; };
 		436A984E239F2F5200243324 /* QuizTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTextField.swift; sourceTree = "<group>"; };
 		436A9850239F300C00243324 /* TitleSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSearchView.swift; sourceTree = "<group>"; };
@@ -148,8 +154,11 @@
 		430107A1239F16B400A37404 /* QuizChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				43579EDB23A185120078F68A /* Helpers */,
 				430107A2239F16B400A37404 /* QuizChallengeTests.swift */,
 				430107A4239F16B400A37404 /* Info.plist */,
+				430A808823A17A5B00B4168C /* ViewModelTests.swift */,
+				43579ED723A1806D0078F68A /* MockedQuizService.swift */,
 			);
 			path = QuizChallengeTests;
 			sourceTree = "<group>";
@@ -254,6 +263,14 @@
 				436A9858239F36BE00243324 /* CurrentStatusView.swift */,
 			);
 			path = CurrentStatusView;
+			sourceTree = "<group>";
+		};
+		43579EDB23A185120078F68A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				43579EDC23A1851E0078F68A /* NotificationsHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		436A985A239F419600243324 /* Extensions */ = {
@@ -457,7 +474,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430A808923A17A5B00B4168C /* ViewModelTests.swift in Sources */,
 				430107A3239F16B400A37404 /* QuizChallengeTests.swift in Sources */,
+				43579EDD23A1851E0078F68A /* NotificationsHelper.swift in Sources */,
+				43579ED823A1806D0078F68A /* MockedQuizService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

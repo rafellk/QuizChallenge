@@ -24,7 +24,6 @@ struct QuizViewModelSource {
         return string
     }
     
-    // todo: format the correct way
     func formattedSeconds() -> String {
         return "\(formatted(value: seconds / 60, numberOfNumbers: 2)):\(formatted(value: seconds % 60, numberOfNumbers: 2))"
     }
