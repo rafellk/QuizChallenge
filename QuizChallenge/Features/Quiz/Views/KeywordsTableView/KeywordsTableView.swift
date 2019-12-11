@@ -71,7 +71,9 @@ extension KeywordsTableView {
     @objc
     private func newWordFound(notification: Notification) {
         if let tuple = notification.object as? (String, [String]) {
-            foundWords = tuple.1
+            DispatchQueue.main.async { [weak self] in
+                self?.foundWords = tuple.1
+            }
         }
     }
 

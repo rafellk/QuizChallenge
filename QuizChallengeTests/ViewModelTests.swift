@@ -15,7 +15,7 @@ class ViewModelTests: XCTestCase {
     var fakeViewController = UIViewController()
 
     override func setUp() {
-        viewModel = QuizViewModel(withPresenter: fakeViewController)
+        fakeViewController = UIViewController()
     }
 
     override func tearDown() {
@@ -23,52 +23,15 @@ class ViewModelTests: XCTestCase {
     }
 
     func testInitialState() {
+        viewModel = QuizViewModel(withPresenter: fakeViewController)
         XCTAssert(viewModel.presenter != nil, "There must be a presenter configured")
         XCTAssert(!viewModel.isProcessing, "It should not be processing")
         XCTAssert(viewModel.onIsProcessing == nil, "OnIsProcessing should be nil")
     }
-    
+
     func testWeakPresenter() {
         viewModel = QuizViewModel(withPresenter: UIViewController())
         XCTAssert(viewModel.presenter == nil, "There mustn't be a presenter configured")
-    }
-    
-    func testStartWithSomeItemsFetched() {
-        let numberOfItems = 50
-        
-        let newWordFoundExpectation = expectation(description: "newWordFound notification needs to reach here")
-        let elapsedTimeExpectation = expectation(description: "it should receive an elapsed time notification")
-        
-        elapsedTimeExpectation.expectedFulfillmentCount = 2
-        
-        var collectedTimes = [String]()
-        let helper = NotificationsHelper()
-        
-        helper.newWordFoundCallback = { tuple in
-            if tuple.0 == "00/\(numberOfItems)" {
-                newWordFoundExpectation.fulfill()
-            }
-        }
-        
-        helper.elapsedTimeCallback = { time in
-            collectedTimes.append(time)
-            elapsedTimeExpectation.fulfill()
-        }
-        
-        let service = MockedQuizService(withNumberOfItems: numberOfItems)
-        viewModel = QuizViewModel(withPresenter: fakeViewController,
-                                  andService: service)
-        
-        viewModel.start()
-        
-        waitForExpectations(timeout: 1) { (error) in
-            if let theError = error {
-                XCTAssert(false, theError.localizedDescription)
-                return
-            }
-            
-            XCTAssert(collectedTimes.count == 2, "It should have two entries")
-        }
     }
 
     func testStartAndWaitWordNotification() {
@@ -100,6 +63,7 @@ class ViewModelTests: XCTestCase {
             XCTAssert(collectedWords.count == 2, "It shoudld have two entries")
             XCTAssert(collectedWords[0].1.count == 0, "it should contains no found words")
             XCTAssert(collectedWords[1].1.count == 1, "it should contain 1 found word")
+            helper.unregisterNotifications()
         }
     }
     
@@ -124,6 +88,8 @@ class ViewModelTests: XCTestCase {
                 XCTAssert(false, theError.localizedDescription)
                 return
             }
+            
+            helper.unregisterNotifications()
         }
     }
 }

@@ -72,7 +72,13 @@ class QuizViewModel: BaseViewModel {
         
         service.fetchQuiz { [weak self] (response, error) in
             self?.isProcessing = false
-            guard let unwrappedSelf = self, !unwrappedSelf.shouldHandleError(withError: error) else { return }
+            guard let unwrappedSelf = self, !unwrappedSelf.shouldHandleError(withError: error,
+                                                                             retryOperation: { [weak self] in
+                                                                                self?.start()
+                                                                             }) else {
+                                                                                self?.timer?.invalidate()
+                                                                                return
+                                                                             }
             
             guard let answer = response?.answer else { return }
             self?.source = QuizViewModelSource(foundWords: [],

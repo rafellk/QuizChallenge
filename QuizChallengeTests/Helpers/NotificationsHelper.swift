@@ -33,6 +33,12 @@ class NotificationsHelper {
                                                object: nil)
     }
     
+    func unregisterNotifications() {
+        NotificationCenter.default.removeObserver(self)
+        newWordFoundCallback = nil
+        elapsedTimeCallback = nil
+    }
+    
     @objc
     private func newWordFound(notification: Notification) {
         if let tuple = notification.object as? (String, [String]) {

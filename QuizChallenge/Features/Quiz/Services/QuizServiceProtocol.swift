@@ -56,7 +56,7 @@ extension QuizServiceProtocol {
         
         timer = Timer.scheduledTimer(withTimeInterval: timeout(), repeats: false) { (_) in
             // todo: create timeout error
-            completion?(nil, nil)
+            completion?(nil, QuizError.timeout)
             isCancelled = true
             task.cancel()
         }
